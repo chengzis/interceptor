@@ -1,0 +1,17 @@
+// 项目版本配置
+ext {
+
+    versions = [
+            javax_inject: '1',
+            ksp_processing: '1.8.20-1.0.10',
+            kotlinpoet: '1.14.2',
+    ]
+
+    dependencies = [
+            javax_inject:  "javax.inject:javax.inject:${versions.javax_inject}",
+            ksp_processing:  "com.google.devtools.ksp:symbol-processing-api:${versions.ksp_processing}",
+            kotlinpoet:  "com.squareup:kotlinpoet-ksp:${versions.kotlinpoet}",
+
+    ]
+
+}
