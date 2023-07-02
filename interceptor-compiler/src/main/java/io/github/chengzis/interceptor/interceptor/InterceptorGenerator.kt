@@ -12,7 +12,6 @@ import com.squareup.kotlinpoet.TypeVariableName
 import com.squareup.kotlinpoet.asClassName
 import com.squareup.kotlinpoet.ksp.writeTo
 import io.github.chengzis.interceptor.AddInterceptor
-import com.neusoft.android.hilt.extension.compiler.interceptor.InterceptorMetadata
 
 /**
  * 生成拦截器

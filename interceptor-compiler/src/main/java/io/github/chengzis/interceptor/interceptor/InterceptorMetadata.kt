@@ -1,4 +1,4 @@
-package com.neusoft.android.hilt.extension.compiler.interceptor
+package io.github.chengzis.interceptor.interceptor
 
 import com.squareup.kotlinpoet.ClassName
 import com.squareup.kotlinpoet.ParameterSpec

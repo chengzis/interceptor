@@ -1,7 +1,6 @@
 package io.github.chengzis.interceptor.interceptor
 
 import com.google.devtools.ksp.processing.SymbolProcessorEnvironment
-import com.neusoft.android.hilt.extension.compiler.interceptor.InterceptorMetadata
 import com.squareup.kotlinpoet.FileSpec
 import com.squareup.kotlinpoet.FunSpec
 import com.squareup.kotlinpoet.KModifier

@@ -9,7 +9,6 @@ import com.google.devtools.ksp.symbol.ClassKind
 import com.google.devtools.ksp.symbol.KSClassDeclaration
 import io.github.chengzis.interceptor.IAnnotationProcessor
 import io.github.chengzis.interceptor.Logger
-import com.neusoft.android.hilt.extension.compiler.interceptor.InterceptorMetadata
 import com.squareup.kotlinpoet.UNIT
 import com.squareup.kotlinpoet.ksp.toClassName
 import com.squareup.kotlinpoet.ksp.toTypeName
