@@ -1,4 +1,4 @@
-# interceptor 拦截器
+# 拦截器
 [![Maven Central][mavenbadge-svg]][mavencentral]
 
 hilt的扩展，提供增强功能
@@ -24,6 +24,6 @@ hilt的扩展，提供增强功能
     ```
 2. 添加依赖
     ```grooy
-     implementation 'io.github.chengzis:interceptor-annotation:$last-version'
-     ksp 'io.github.chengzis:interceptor-annotation:$last-version'
+     implementation 'io.github.chengzis:ksp-annotation:$last-version'
+     ksp 'io.github.chengzis:ksp-compiler:$last-version'
     ```
