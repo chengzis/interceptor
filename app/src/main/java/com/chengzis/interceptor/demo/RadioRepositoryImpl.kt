@@ -19,14 +19,14 @@ annotation class Test2
 
 @AutoBinds(
     targets = [
-        RadioRepository::class,
-        RadioFavoriteRepository::class,
+        DefineRadioRepository::class,
+        DefineRadioFavoriteRepository::class,
     ],
     installIn = ActivityComponent::class,
     qualifier = Test1::class
 )
 @ActivityScoped
-class RadioRepositoryImpl @Inject constructor() : RadioFavoriteRepository() {
+class RadioRepositoryImpl @Inject constructor() : BaseDefineRadioFavoriteRepository() {
 
 
     override fun onAddFavorite(frequency: Int) {
@@ -45,14 +45,14 @@ class RadioRepositoryImpl @Inject constructor() : RadioFavoriteRepository() {
 
 @AutoBinds(
     targets = [
-        RadioRepository::class,
-        RadioFavoriteRepository::class,
+        DefineRadioRepository::class,
+        DefineRadioFavoriteRepository::class,
     ],
     installIn = ActivityComponent::class,
     qualifier = Test2::class
 )
 @ActivityScoped
-class RadioRepositoryImpl2 @Inject constructor() : RadioFavoriteRepository() {
+class RadioRepositoryImpl2 @Inject constructor() : BaseDefineRadioFavoriteRepository() {
 
 
     override fun onAddFavorite(frequency: Int) {

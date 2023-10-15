@@ -13,11 +13,11 @@ class MainActivity : AppCompatActivity() {
 
     @Inject
     @Test1
-    lateinit var r1 : RadioFavoriteRepository
+    lateinit var r1 : DefineRadioFavoriteRepository
 
     @Inject
     @Test2
-    lateinit var r2 : RadioRepository
+    lateinit var r2 : DefineRadioRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

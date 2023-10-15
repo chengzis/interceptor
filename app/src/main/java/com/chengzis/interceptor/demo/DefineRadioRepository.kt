@@ -7,7 +7,6 @@ import io.github.chengzis.ksp.Ignore
 /**
  * radio仓库
  */
-@Define
 @Chains
 interface DefineRadioRepository {
 

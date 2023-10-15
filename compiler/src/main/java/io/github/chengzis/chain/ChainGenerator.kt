@@ -18,15 +18,16 @@ class ChainGenerator(private val metadata: ChainMetadata) : ICodeGenerator<FileS
     override fun generate(environment: SymbolProcessorEnvironment): FileSpec {
         val builder = TypeSpec.classBuilder(metadata.className)
             .addModifiers(KModifier.ABSTRACT, KModifier.PUBLIC)
+            .addSuperinterface(metadata.defineClassName)
 
         try {
             val extend = metadata.chain.extend.asClassName()
             if (extend != UNIT) {
-                builder.superclass(extend.peerClass(extend.simpleName.replace("Define", "")))
+                builder.superclass(ChainMetadata.getTargetClassName(extend))
             }
         } catch (e: KSTypeNotPresentException) {
             val extend = e.ksType.toClassName()
-            builder.superclass(extend.peerClass(extend.simpleName.replace("Define", "")))
+            builder.superclass(ChainMetadata.getTargetClassName(extend))
         }
 
         metadata.doc?.let {

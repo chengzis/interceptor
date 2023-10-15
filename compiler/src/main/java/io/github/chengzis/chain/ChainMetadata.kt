@@ -1,5 +1,6 @@
 package io.github.chengzis.chain
 
+import com.squareup.kotlinpoet.ClassName
 import io.github.chengzis.chain.ksp.Chains
 import io.github.chengzis.medatata.ClassMetadata
 
@@ -17,12 +18,12 @@ class ChainMetadata(element: ClassMetadata) {
     /**
      * 生成的目标类的简称
      */
-    val simpleName = element.className.simpleName.replace("Define", "")
+    val simpleName = getTargetSimpleName(element.className)
 
     /**
      * 生成的目标类的类名
      */
-    val className = element.className.peerClass(simpleName)
+    val className = getTargetClassName(element.className)
 
     /**
      * 生成的目标参数类的类名
@@ -47,5 +48,16 @@ class ChainMetadata(element: ClassMetadata) {
         return "ChainMetadata(simpleName='$simpleName', className=$className, argsClassName=$argsClassName)"
     }
 
+
+    companion object {
+
+        fun getTargetSimpleName(className: ClassName) : String {
+           return "Base" + className.simpleName.replaceFirst("I", "")
+        }
+
+        fun getTargetClassName(className: ClassName) : ClassName {
+            return className.peerClass(getTargetSimpleName(className))
+        }
+    }
 
 }

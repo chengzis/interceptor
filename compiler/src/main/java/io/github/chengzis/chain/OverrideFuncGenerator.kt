@@ -27,7 +27,7 @@ class OverrideFuncGenerator(private val metadata: ChainMetadata) : ICodeGenerato
 
     private fun generateOverrideFunc(func: FuncMetadata): FunSpec  {
         return FunSpec.builder(func.simpleName)
-            .addModifiers(KModifier.ABSTRACT, KModifier.PUBLIC)
+            .addModifiers(KModifier.ABSTRACT, KModifier.PUBLIC, KModifier.OVERRIDE)
             .returns(func.returnType)
             .addParameters(func.parameters.map { ParameterSpec(it.name!!, it.type) })
             .apply {
@@ -43,7 +43,7 @@ class OverrideFuncGenerator(private val metadata: ChainMetadata) : ICodeGenerato
 
     private fun generateFunc(func: FuncMetadata): FunSpec {
         val builder = FunSpec.builder(func.simpleName)
-            .addModifiers(KModifier.FINAL, KModifier.PUBLIC)
+            .addModifiers(KModifier.FINAL, KModifier.PUBLIC, KModifier.OVERRIDE)
             .returns(func.returnType)
             .addParameters(func.parameters.map { ParameterSpec(it.name!!, it.type) })
 
