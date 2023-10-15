@@ -3,7 +3,7 @@ package com.chengzis.interceptor.demo
 import io.github.chengzis.chain.ksp.Chains
 import io.github.chengzis.ksp.Define
 
-@Chains(extend = DefineRadioRepository::class)
+@Chains(extends = DefineRadioRepository::class)
 interface DefineRadioFavoriteRepository : DefineRadioRepository {
 
     /**

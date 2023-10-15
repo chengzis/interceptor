@@ -3,8 +3,8 @@
 
 hilt的扩展，提供增强功能
 
-[mavenbadge-svg]: https://maven-badges.herokuapp.com/maven-central/io.github.chengzis/interceptor/badge.svg
-[mavencentral]: https://search.maven.org/artifact/io.github.chengzis/interceptor-annotation
+[mavenbadge-svg]: https://maven-badges.herokuapp.com/maven-central/io.github.chengzis/ksp-annotation/badge.svg
+[mavencentral]: https://search.maven.org/artifact/io.github.chengzis/ksp-annotation
 
 
 ## Download

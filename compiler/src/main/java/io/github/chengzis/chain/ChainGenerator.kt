@@ -21,7 +21,7 @@ class ChainGenerator(private val metadata: ChainMetadata) : ICodeGenerator<FileS
             .addSuperinterface(metadata.defineClassName)
 
         try {
-            val extend = metadata.chain.extend.asClassName()
+            val extend = metadata.chain.extends.asClassName()
             if (extend != UNIT) {
                 builder.superclass(ChainMetadata.getTargetClassName(extend))
             }
@@ -51,9 +51,13 @@ class ChainGenerator(private val metadata: ChainMetadata) : ICodeGenerator<FileS
         builder.addFunctions(AddInterceptorGenerator(metadata).generate(environment))
 
 
-
-
-        return FileSpec.get(metadata.packageName, builder.build())
+        return FileSpec.builder(metadata.className)
+            .addType(builder.build())
+            .apply {
+                for (funSpec in AddInterceptor2Generator(metadata).generate(environment)) {
+                    addFunction(funSpec)
+                }
+            }.build()
     }
 
 }
