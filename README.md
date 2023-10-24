@@ -13,7 +13,7 @@ hilt的扩展，提供增强功能
    在项目的build.gradle中添加ksp插件
     ```grooy
     plugins {
-        id 'com.google.devtools.ksp' version '1.8.20-1.0.10'
+        id 'com.google.devtools.ksp' version '1.8.20-1.0.11'
     }
     ```
     在模块的build.gradle中添加ksp插件

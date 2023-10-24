@@ -4,6 +4,7 @@ import dagger.hilt.android.components.ActivityComponent
 import dagger.hilt.android.scopes.ActivityRetainedScoped
 import dagger.hilt.android.scopes.ActivityScoped
 import dagger.hilt.android.scopes.ViewModelScoped
+import dagger.hilt.components.SingletonComponent
 import io.github.chengzis.hilt.ksp.AutoBinds
 import javax.inject.Inject
 import javax.inject.Qualifier
@@ -68,3 +69,12 @@ class RadioRepositoryImpl2 @Inject constructor() : BaseDefineRadioFavoriteReposi
     }
 
 }
+
+
+interface IUserRepository
+
+@AutoBinds(
+    targets = [IUserRepository::class],
+    installIn = SingletonComponent::class
+)
+class UserRepository @Inject constructor() : IUserRepository
