@@ -22,7 +22,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Ksp"
+rootProject.name = "ksp"
 include ':app'
 include ':annotation'
 include ':compiler'
